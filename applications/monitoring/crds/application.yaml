@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: monitoring
+  name: monitoring-crds
   namespace: argocd
 spec:
   destination:
@@ -9,12 +9,9 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    helm:
-      valueFiles:
-        - values.yaml
     repoURL: https://github.com/Hamza-Ikiou/argocd-applications.git
     targetRevision: main
-    path: helm-charts/monitoring
+    path: helm-charts/monitoring-crds
   syncPolicy:
     automated:
       allowEmpty: false

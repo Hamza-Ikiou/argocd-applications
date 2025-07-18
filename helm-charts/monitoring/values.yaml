@@ -1,6 +1,6 @@
 kube-prometheus-stack:
-#  crds:
-#    enabled: false
+  crds:
+    enabled: false
 
   prometheus:
     service:
