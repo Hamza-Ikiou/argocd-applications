@@ -1,0 +1,36 @@
+kube-prometheus-stack:
+#  crds:
+#    enabled: false
+
+  prometheus:
+    service:
+     type: LoadBalancer
+    prometheusSpec:
+      serviceMonitorSelectorNilUsesHelmValues: false
+      podMonitorSelectorNilUsesHelmValues: false
+      ruleSelectorNilUsesHelmValues: false
+      scrapeConfigSelectorNilUsesHelmValues: false
+      scrapeInterval: 15s
+      evaluationInterval: 15s
+      enableAdminAPI: true
+
+  alertmanager:
+    service:
+      type: LoadBalancer
+      nodePort: null
+    ingress:
+      enabled: true
+      ingressClassName: traefik
+      hosts:
+        - alertmanager.web
+      paths:
+        - /
+
+  grafana:
+    service:
+      type: LoadBalancer
+    ingress:
+      enabled: true
+      ingressClassName: traefik
+      hosts:
+        - grafana.web
