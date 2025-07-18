@@ -11,7 +11,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    repoURL: git@github.com:Hamza-Ikiou/argocd-applications.git
+    repoURL: https://github.com/Hamza-Ikiou/argocd-applications.git
     targetRevision: main
     path: applications/metallb-config/manifests
   syncPolicy:

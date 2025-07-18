@@ -14,7 +14,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-    repoURL: git@github.com:Hamza-Ikiou/argocd-applications.git
+    repoURL: https://github.com/Hamza-Ikiou/argocd-applications.git
     targetRevision: main
     path: helm-charts/metallb
   syncPolicy:
