@@ -5,6 +5,7 @@ kube-prometheus-stack:
   prometheus:
     service:
      type: LoadBalancer
+     loadBalancerIP: 192.168.56.103
     prometheusSpec:
       serviceMonitorSelectorNilUsesHelmValues: false
       podMonitorSelectorNilUsesHelmValues: false
@@ -17,7 +18,7 @@ kube-prometheus-stack:
   alertmanager:
     service:
       type: LoadBalancer
-      nodePort: null
+      loadBalancerIP: 192.168.56.105
     ingress:
       enabled: true
       ingressClassName: traefik
@@ -29,6 +30,7 @@ kube-prometheus-stack:
   grafana:
     service:
       type: LoadBalancer
+      loadBalancerIP: 192.168.56.104
     ingress:
       enabled: true
       ingressClassName: traefik
